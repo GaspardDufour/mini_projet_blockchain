@@ -1,0 +1,278 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "products",
+				"outputs": [
+					{
+						"name": "manufacturer",
+						"type": "address"
+					},
+					{
+						"name": "lotNumber",
+						"type": "uint256"
+					},
+					{
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"name": "totalQuantity",
+						"type": "uint256"
+					},
+					{
+						"name": "lastOwner",
+						"type": "address"
+					},
+					{
+						"name": "purchaseDate",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_beneficiaries",
+						"type": "address[]"
+					}
+				],
+				"name": "addToWhitelist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_lotNumber",
+						"type": "uint256"
+					},
+					{
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"name": "_totalQuantity",
+						"type": "uint256"
+					}
+				],
+				"name": "registerProduct",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_lotNumber",
+						"type": "uint256"
+					},
+					{
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferProductOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_beneficiary",
+						"type": "address"
+					}
+				],
+				"name": "removeFromWhitelist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "whitelist",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "lotNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ProductTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_beneficiary",
+						"type": "address"
+					}
+				],
+				"name": "AddedBeneficiary",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"addToWhitelist(address[])": {
+					"details": "Adds list of addresses to whitelist. Not overloaded due to limitations with truffle testing.\r",
+					"params": {
+						"_beneficiaries": "Addresses to be added to the whitelist\r"
+					}
+				},
+				"removeFromWhitelist(address)": {
+					"details": "Removes single address from whitelist.\r",
+					"params": {
+						"_beneficiary": "Address to be removed to the whitelist\r"
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.\r",
+					"params": {
+						"newOwner": "The address to transfer ownership to.\r"
+					}
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".git/contracts/ProductTraceability.sol": "ProductTraceability"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".git/contracts/Ownable.sol": {
+			"keccak256": "0xefc64c627e8b8b49b3f51bdb7f0b860ea78dda7156d5929b7d69bc3c91f48502",
+			"urls": [
+				"bzzr://83ce3a89e4ea198092b898837be68e8e44c24d331d9ebbbcbe3fd0b439404462"
+			]
+		},
+		".git/contracts/ProductTraceability.sol": {
+			"keccak256": "0x6da0f545960aa915dd7733b18c12f5e9cfe27b713bdcec4676f784a724884c21",
+			"urls": [
+				"bzzr://01e7830879c582c94827a6a04690b64b55f8640be3cb8aa01a4a0d2cba91e05d"
+			]
+		},
+		".git/contracts/Whitelist.sol": {
+			"keccak256": "0x0111cbbe377c2ee2ef456d7fdbba7f2a03311b49da7a1a60c42881a0831eaea4",
+			"urls": [
+				"bzzr://1e3022b2216da09022c1907d8e5489eeacc86280e6d2d460544c9521b6c230ec"
+			]
+		}
+	},
+	"version": 1
+}
